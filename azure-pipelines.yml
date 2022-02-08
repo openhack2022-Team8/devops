@@ -9,9 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-- task: GoTool@0
-  inputs:
-    version: '1.16'
+
 
 variables:
   GOBIN:  '$(GOPATH)/bin' # Go binaries path
@@ -20,6 +18,11 @@ variables:
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)/apis/trips/' # Path to the module's code
 
 steps:
+
+- task: GoTool@0
+  inputs:
+    version: '1.16'
+
 - script: |
     mkdir -p '$(GOBIN)'
     mkdir -p '$(GOPATH)/pkg'
