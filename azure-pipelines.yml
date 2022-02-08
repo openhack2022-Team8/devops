@@ -19,5 +19,9 @@ steps:
 
 - task: Go@0
   inputs:
+    command: 'get'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)/apis/trips'
+- task: Go@0
+  inputs:
     command: 'build'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/apis/trips'
+    workingDirectory: '$(Build.ArtifactStagingDirectory)/apis/trips'
