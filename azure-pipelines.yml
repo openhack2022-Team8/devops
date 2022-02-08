@@ -27,4 +27,4 @@ steps:
   inputs:
     command: 'build'
     arguments: '-d -v github.com/Azure-Samples/openhack-devops-team/...'
-    workingDirectory: ''$(System.DefaultWorkingDirectory)/apis/trips'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/apis/trips'
