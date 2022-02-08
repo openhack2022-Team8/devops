@@ -1,0 +1,17 @@
+# In this example, any change inside the `/apis/poi` directory
+# will require approval from @ahmedalzahrany.
+/apis/poi/ @ahmedalzahrany
+
+# In this example, any change inside the `/apis/trips` directory
+# will require approval from @evgenijrenke or.
+/apis/trips/ @evgenijrenke 
+
+
+# In this example, any change inside the `/apis/user-java` directory
+# will require approval from @msftvapolasa.
+/apis/user-java/ @msftvapolasa
+
+
+# In this example, any change inside the `/apis/userprofile` directory
+# will require approval from @lifneergaard.
+/apis/userprofile/ @lifneergaard
