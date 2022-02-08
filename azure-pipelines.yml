@@ -20,8 +20,11 @@ steps:
 - task: Go@0
   inputs:
     command: 'get'
-    workingDirectory: '$(Build.ArtifactStagingDirectory)/apis/trips'
+    arguments: '-d -v github.com/Azure-Samples/openhack-devops-team/...'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/apis/trips'
+    
 - task: Go@0
   inputs:
     command: 'build'
-    workingDirectory: '$(Build.ArtifactStagingDirectory)/apis/trips'
+    arguments: '-d -v github.com/Azure-Samples/openhack-devops-team/...'
+    workingDirectory: ''$(System.DefaultWorkingDirectory)/apis/trips'
