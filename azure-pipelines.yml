@@ -18,7 +18,8 @@ steps:
   inputs:
     command: 'get'
     workingDirectory: '$(Build.ArtifactStagingDirectory)/apis/trips/'
-- task: Go@0
+
+- task: Go@1
   inputs:
     command: 'build'
     workingDirectory: '$(Build.ArtifactStagingDirectory)/apis/trips/'
