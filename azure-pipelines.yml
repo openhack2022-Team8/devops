@@ -33,12 +33,13 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: GoTool@0
+- task: DockerInstaller@0
   inputs:
-    version: '1.16'
+    dockerVersion: '17.09.0-ce'
 
-- task: Go@0
+- task: Docker@2
   inputs:
-    command: 'test'
-    arguments: './test'
-    workingDirectory: '$(workingDirectory)'
+    command: 'buildAndPush'
+    Dockerfile: '**/apis/poi/web/Dockerfile'
+    tags: |
+          test127
