@@ -39,9 +39,10 @@ steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'openhackbuf27or3acr'
-    repository: 'ACR'
+    containerRegistry: 'ACR'
+#    repository: 'ACR'
     command: 'buildAndPush'
     Dockerfile: '**/apis/poi/web/Dockerfile'
     tags: |
           test127
+
