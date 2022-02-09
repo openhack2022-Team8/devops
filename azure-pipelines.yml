@@ -32,3 +32,13 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: GoTool@0
+  inputs:
+    version: '1.16'
+
+- task: Go@0
+  inputs:
+    command: 'build'
+    workingDirectory: '$(workingDirectory)'
+  
