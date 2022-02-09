@@ -39,8 +39,8 @@ steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'ACR'
-    repository: 'Azure Container Registry'
+    containerRegistry: 'openhackbuf27or3acr'
+    repository: 'ACR'
     command: 'buildAndPush'
     Dockerfile: '**/apis/poi/web/Dockerfile'
     tags: |
