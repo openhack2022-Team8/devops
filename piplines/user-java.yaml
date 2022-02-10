@@ -39,7 +39,7 @@ stages:
     - task: Maven@3
       displayName: 'Build UserJava'
       inputs:
-        mavenPomFile: '**/apis/user-java/pom.xml'
+        mavenPomFile: '$(Parameters.mavenPOMFile)'
         testResultsFiles: '**/TEST-*.xml'
         mavenVersionOption: Path
         mavenDirectory: /usr
