@@ -14,6 +14,14 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
+#variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: '430761df-e439-4fb3-a1b8-c54ef24a057b'
+  imageRepository: 'openhackteamdevops'
+  containerRegistry: 'openhackbuf27or3acr.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/.devcontainer/Dockerfile'
+  tag: '$(Build.BuildId)'
+
 steps:
 - task: NuGetToolInstaller@1
 
@@ -37,12 +45,28 @@ steps:
 #  inputs:
 #    dockerVersion: '17.09.0-ce'
 
+
+
+
+  # Agent VM image name
+#  vmImageName: 'ubuntu-latest'
+
+#stages:
+#- stage: Build
+#  displayName: Build and push stage
+#  jobs:
+#  - job: Build
+#    displayName: Build
+#    pool:
+#      vmImage: $(vmImageName)
+#    steps:
+
 - task: Docker@2
   displayName: Build and push an image to container registry
   inputs:
-    command: 'buildAndPush'
+    command: buildAndPush
     repository: $(imageRepository)
-    Dockerfile: $(dockerfilePath)
+    dockerfile: $(dockerfilePath)
     containerRegistry: $(dockerRegistryServiceConnection)
     tags: |
-          $(tag)
+      $(tag)
