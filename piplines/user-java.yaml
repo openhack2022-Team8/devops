@@ -39,7 +39,7 @@ stages:
     - task: Maven@3
       displayName: 'Build UserJava'
       inputs:
-        mavenPomFile: '$(Parameters.mavenPOMFile)'
+        mavenPomFile: '../apis/user-java/pom.xml'
         testResultsFiles: '**/TEST-*.xml'
         mavenVersionOption: Path
         mavenDirectory: /usr
@@ -65,3 +65,4 @@ stages:
 #    mavenAuthenticateFeed: false
 #    effectivePomSkip: false
 #    sonarQubeRunAnalysis: false
+
