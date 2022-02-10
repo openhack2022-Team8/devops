@@ -41,8 +41,7 @@ steps:
   displayName: Build and push an image to container registry
   inputs:
     command: 'buildAndPush'
-    # devopsoh/api-poi
-    repository: 'openhackbuf27or3acr'
+    repository: 'devopsoh/api-poi'
     Dockerfile: '**/apis/poi/web/Dockerfile'
     containerRegistry: 'ACR'
     tags: |
