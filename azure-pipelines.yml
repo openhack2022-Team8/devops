@@ -38,11 +38,13 @@ steps:
 #    dockerVersion: '17.09.0-ce'
 
 - task: Docker@2
+  displayName: Build and push an image to container registry
   inputs:
-    containerRegistry: 'ACR'
-    repository: 'openhackbuf27or3acr'
     command: 'buildAndPush'
+    # devopsoh/api-poi
+    repository: 'openhackbuf27or3acr'
     Dockerfile: '**/apis/poi/web/Dockerfile'
+    containerRegistry: 'ACR'
     tags: |
           test127
 
