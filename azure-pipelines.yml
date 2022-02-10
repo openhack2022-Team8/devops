@@ -41,9 +41,8 @@ steps:
   displayName: Build and push an image to container registry
   inputs:
     command: 'buildAndPush'
-    repository: 'devopsoh/api-poi'
-    Dockerfile: '**/apis/poi/web/Dockerfile'
-    containerRegistry: 'ACR'
+    repository: $(imageRepository)
+    Dockerfile: $(dockerfilePath)
+    containerRegistry: $(dockerRegistryServiceConnection)
     tags: |
-          test127
-
+          $(tag)
